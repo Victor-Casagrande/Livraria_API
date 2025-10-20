@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "titulo": "Clean Code",
+    "autor": "Robert C. Martin",
+    "categoria": "Programação",
+    "ano": 2008,
+    "editora": "Alta Books",
+    "numeroPaginas": 464
+  },
+  {
+    "id": 3,
+    "titulo": "Arquitetura Limpa",
+    "autor": "Robert C. Martin",
+    "categoria": "Engenharia de Software",
+    "ano": 2017,
+    "editora": "Alta Books",
+    "numeroPaginas": 432
+  },
+  {
+    "id": 5,
+    "titulo": "Padrões de Projeto",
+    "autor": "Erich Gamma",
+    "categoria": "Engenharia de Software",
+    "ano": 1994,
+    "editora": "Bookman",
+    "numeroPaginas": 416
+  }
+]

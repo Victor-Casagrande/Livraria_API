@@ -1,0 +1,153 @@
+{
+	"info": {
+		"_postman_id": "2ea23d7d-9d9d-44e1-b618-bc6182a52b60",
+		"name": "API Livraria - Completa",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "49225667"
+	},
+	"item": [
+		{
+			"name": "Listar Livros (com Filtro e Paginação)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/livros?categoria=Programação&page=1&limit=2",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"livros"
+					],
+					"query": [
+						{
+							"key": "categoria",
+							"value": "Programação",
+							"description": "(Opcional) Filtra livros pela categoria."
+						},
+						{
+							"key": "page",
+							"value": "1",
+							"description": "(Opcional) Número da página para paginação."
+						},
+						{
+							"key": "limit",
+							"value": "2",
+							"description": "(Opcional) Número de itens por página."
+						}
+					]
+				},
+				"description": "Lista todos os livros. Você pode habilitar/desabilitar os parâmetros de filtro e paginação na aba 'Params'."
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar Livro por ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/livros/1",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"livros",
+						"1"
+					]
+				},
+				"description": "Busca um livro específico. Altere o número na URL para testar outros IDs."
+			},
+			"response": []
+		},
+		{
+			"name": "Criar Novo Livro (com novos campos)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"titulo\": \"Padrões de Projeto\",\n    \"autor\": \"Erich Gamma\",\n    \"categoria\": \"Engenharia de Software\",\n    \"ano\": 1994,\n    \"editora\": \"Bookman\",\n    \"numeroPaginas\": 416\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/livros",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"livros"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar Livro por ID",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"titulo\": \"Padrões de Projeto: Soluções Reutilizáveis\",\n    \"autor\": \"Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides\",\n    \"categoria\": \"Software Engineering\",\n    \"ano\": 1995,\n    \"editora\": \"Addison-Wesley\",\n    \"numeroPaginas\": 395\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/livros/1",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"livros",
+						"1"
+					]
+				},
+				"description": "Atualiza um livro existente. Altere o ID na URL e os dados no corpo da requisição."
+			},
+			"response": []
+		},
+		{
+			"name": "Remover Livro por ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/livros/3",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"livros",
+						"3"
+					]
+				},
+				"description": "Remove um livro pelo ID. Altere o número na URL para remover o livro desejado."
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:3000/api"
+		}
+	]
+}
